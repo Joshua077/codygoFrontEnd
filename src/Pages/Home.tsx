@@ -85,7 +85,7 @@ export default function Home() {
       <div className="header">
         <h1>Hotel Records</h1>
       </div>
-      {loading && <h1>Loading</h1>}
+      {loading && <h1 style={{textAlign: "center"}}>Loading</h1>}
       <div className="container" style={{ marginTop: "54px" }}>
         <div className="row">
           <div className="col-sm-12 col-lg-4" >

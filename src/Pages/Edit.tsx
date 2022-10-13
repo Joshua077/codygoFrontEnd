@@ -66,8 +66,8 @@ export default function Edit() {
   return (
     <div className="edit">
       {loading ? (
-        <div className="">
-          <div className="spinner-border spinner"></div>
+        <div >
+          <h1 style={{textAlign : "center"}}>Loading</h1>
         </div>
       ) : (
         <form style={{ padding: "16px" }} onSubmit={handleSubmit}>
