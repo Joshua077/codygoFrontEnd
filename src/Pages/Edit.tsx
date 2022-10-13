@@ -17,7 +17,7 @@ export default function Edit() {
 
   useEffect(() => {
     setLoading(true);
-    fetch(`http://localhost:8000/api/v1/hotel/${id}`)
+    fetch(`https://cod-joshbackend.herokuapp.com/api/v1/hotel/${id}`)
       .then((res) => res.json())
       .then((data) => {
         console.log(data.message, "ffff");
@@ -47,7 +47,7 @@ export default function Edit() {
       body: JSON.stringify(data),
     };
     setLoading(true);
-    fetch(`http://localhost:8000/api/v1/hotel/${id}`, requestOptions)
+    fetch(`https://cod-joshbackend.herokuapp.com/api/v1/hotel/${id}`, requestOptions)
       .then((response) => {
         response.json();
       })

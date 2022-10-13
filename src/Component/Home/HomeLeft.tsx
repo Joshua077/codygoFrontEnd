@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 export default function HomeLeft() {
   const [hotel, setHotel] = useState<newhotel | null>(null);
   useEffect(() => {
-    fetch(`http://localhost:8000/api/v1/hotel`)
+    fetch(`https://cod-joshbackend.herokuapp.com/api/v1/hotel`)
       .then((res) => res.json())
       .then((data: data) => {
         setHotel(data.message);

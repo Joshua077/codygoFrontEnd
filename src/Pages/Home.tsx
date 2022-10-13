@@ -24,19 +24,19 @@ export default function Home() {
       method: "DELETE",
     };
     setLoading(true);
-    fetch("http://localhost:8000/api/v1/hotel/" + id, requestOptions)
+    fetch("https://cod-joshbackend.herokuapp.com/api/v1/hotel/" + id, requestOptions)
       .then((response) => {
         return response.json();
       })
       .then((result) => {
-        console.log(result, "result");
+       
         setLoading(false);
         setDeletehotel(true);
       })
       .catch((error) => {
         setLoading(false);
         setDeletehotel(true);
-        console.log(error, "error");
+        
       });
   };
 
@@ -49,12 +49,12 @@ export default function Home() {
 
     setLoading(true);
 
-    fetch("http://localhost:8000/api/v1/hotel", requestOptions)
+    fetch("https://cod-joshbackend.herokuapp.com/api/v1/hotel", requestOptions)
       .then((response) => {
         return response.json();
       })
       .then((result) => {
-        console.log(result, "result");
+        
         setLoading(false);
         setNewHotel(false);
         setCreatehotel(true);
@@ -62,13 +62,13 @@ export default function Home() {
       .catch((error) => {
         setLoading(false);
         setCreatehotel(false);
-        console.log("error here");
+        
       });
   };
 
   useEffect(() => {
     setLoading(true);
-    fetch(`http://localhost:8000/api/v1/hotel${search ? `${search}` : ''}`)
+    fetch(`https://cod-joshbackend.herokuapp.com/api/v1/hotel${search ? `${search}` : ''}`)
       .then((res) => res.json())
       .then((data: data) => {
         setHotel(data.message);
@@ -76,7 +76,7 @@ export default function Home() {
       })
       .catch((err) => {
         setLoading(false);
-        console.log(err);
+       
       });
   }, [deletehotel, createhotel, search]);
 
@@ -85,7 +85,7 @@ export default function Home() {
       <div className="header">
         <h1>Hotel Records</h1>
       </div>
-
+      {loading && <h1>Loading</h1>}
       <div className="container" style={{ marginTop: "54px" }}>
         <div className="row">
           <div className="col-sm-12 col-lg-4" >
